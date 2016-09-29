@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="potato" ng-controller="MyController">
+<head>
+    <meta charset="UTF-8">
+    <title>Potato Front-End Assignment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">   
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
+</head>
+<body>
+    <h1>Flickr Public Feed</h1>
+    <h3>Click the item to see its details</h3>
+    <div class="table-container">
+        <table ng-repeat="item in data.items">
+                <tr class="default" ng-show="currentItem != item" ng-click="setCurrent(item)">
+                    <td class="image">
+                        <img src="{{ item.media.m }}">
+                    </td>
+                    <td>
+                        <div class="title">
+                            {{item.title}}
+                        </div>
+                        <div id="published">
+                            Published: {{item.published | date: 'MMM d, y'}} at {{ item.published | date: 'h:mm' }}
+                        </div>
+                        <div id="author">
+                            <a href="https://www.flickr.com/people/{{item.author_id}}" ng-click="$event.stopPropagation()">{{ item.author }}</a> | 
+                            <a href="{{item.link}}" ng-click="$event.stopPropagation()">View on Flickr</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="show-details" ng-show="currentItem == item" height="122px">
+                    <td colspan="2" width="610px" border-radius="20px" overflow="hidden">
+                        <span class="cancel icon ion-android-cancel" ng-click="cancel()"></span>
+                        <div class="clicked-title">
+                            {{item.title}}
+                        </div>
+                        <div class="clicked-author">
+                            {{item.author}} | Published: {{item.published | date: 'MMM d, y'}} at {{ item.published | date: 'h:mm' }}
+                        </div>
+                        <div id="description">
+                            <span ng-bind-html='toTrustedHTML( item.description )'></span>
+                        </div>
+                        <div id="tags">
+                            Tags: {{item.tags}}
+                        </div>
+                    </td>
+                </tr>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.min.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/MyController.js"></script>
+</body>
+</html>

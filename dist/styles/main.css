@@ -1,0 +1,117 @@
+html {
+    background-color: #2C242E;
+}
+
+h1 {
+font-family: Futura, Futura-Medium, "Futura Medium", "Century Gothic", CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L", "Avant Garde", sans-serif;
+	color: #f0e8de;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 26.4px;
+}
+
+h3 {
+    font-family: Futura, Futura-Medium, "Futura Medium", "Century Gothic", CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L", "Avant Garde", sans-serif;
+}
+body {
+    min-width: 90%;
+    min-height: 90%
+    padding: 50px;
+font-family: Futura, Futura-Medium, "Futura Medium", "Century Gothic", CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L", "Avant Garde", sans-serif;
+    color: #f0e8de;
+	font-style: normal;
+	font-variant: normal;
+}
+
+.table-container {
+    max-height: 600px;
+    overflow-y: scroll;
+    max-width: 600px;
+    border-style: ridge;
+    border-color: #2C242E;
+    background: #f0e8de;
+    color: #2C242E;
+    -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+    
+}
+
+.image {
+    width: 200px !important;
+    min-height: 120px !important;
+    display: block;
+    object-fit: cover !important;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.image img {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+}
+
+.title {
+    font-size: 22px;
+    width: 400px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.clicked-title {
+    font-size: 22px;
+}
+
+#published {
+    font-size: 12px;
+}
+
+#author {
+    font-size: 12px;
+}
+
+a {
+    color: #AD2B65;
+}
+
+.clicked-author {
+    font-size: 14px;
+}
+
+#tags {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.show-details {
+    position: relative;
+    padding-left: 20px;
+    background-color: #2C242E;
+    color: #f0e8de;
+    border-color: #2C242E;
+    width: 640px;
+}
+
+.cancel {
+    position: relative;
+    top: 0px;
+    padding-right: 0px;
+    cursor: pointer;
+    float: right;
+}
+
+
+.default.ng-hide-add, .animate-show.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+.default.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
